@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RegiCoreApp.Models.Student>
+@{
+    ViewData["Title"] = "Student";
+}
+
+<h2>Student</h2>
+@if (Model.Count().Equals(0))
+{
+    <h2>There is no student available</h2>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr class="success">
+                <th>Student Id</th>
+                <th>Student Name</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>
+                        @student.Id
+                    </td>
+                    <td>
+                        @student.Name
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
